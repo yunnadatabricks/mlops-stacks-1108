@@ -13,8 +13,8 @@ terraform {
   // in the provider block below, as described
   // in https://registry.terraform.io/providers/hashicorp/aws/latest/docs#environment-variables
   backend "s3" {
-    bucket         = "mlopsStacksAWS1108v1-cicd-setup-tfstate"
-    dynamodb_table = "mlopsStacksAWS1108v1-cicd-setup-tfstate-lock"
+    bucket         = "mlopsstacksaws1108v1-cicd-setup-tfstate"
+    dynamodb_table = "mlopsstacksaws1108v1-cicd-setup-tfstate-lock"
     key            = "cicd-setup.terraform.tfstate"
   }
 }

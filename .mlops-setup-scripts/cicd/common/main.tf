@@ -9,7 +9,7 @@ resource "databricks_git_credential" "service_principal_git_token" {
 // secret scopes using our CI/CD service principals, so that only the CI/CD service
 // principals can access the scopes.
 resource "databricks_secret_scope" "cd_credentials" {
-  name = "${var.env}-mlopsStacksAWS1108v1-cd-credentials"
+  name = "${var.env}-mlopsstacksaws1108v1-cd-credentials"
 }
 
 resource "databricks_secret" "cd_credentials_token" {

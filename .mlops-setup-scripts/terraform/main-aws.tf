@@ -5,7 +5,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "mlopsStacksAWS1108v1tfstate"
+  bucket = "mlopsstacksaws1108v1-tfstate"
 
   lifecycle {
     prevent_destroy = true
@@ -21,7 +21,7 @@ resource "aws_s3_bucket_versioning" "terraform_state" {
 }
 
 resource "aws_dynamodb_table" "terraform_state_lock" {
-  name           = "mlopsStacksAWS1108v1-tfstate-lock"
+  name           = "mlopsstacksaws1108v1-tfstate-lock"
   read_capacity  = 1
   write_capacity = 1
   hash_key       = "LockID"
@@ -80,7 +80,7 @@ resource "aws_iam_access_key" "s3_bucket_cicd_key" {
 // Create a second S3 bucket and DynamoDB table for storing terraform state for CI/CD
 // service principals
 resource "aws_s3_bucket" "cicd_terraform_state" {
-  bucket = "mlopsStacksAWS1108v1-cicd-setup-tfstate"
+  bucket = "mlopsstacksaws1108v1-cicd-setup-tfstate"
 
   lifecycle {
     prevent_destroy = true
@@ -96,7 +96,7 @@ resource "aws_s3_bucket_versioning" "cicd_terraform_state" {
 }
 
 resource "aws_dynamodb_table" "cicd_terraform_state_lock" {
-  name           = "mlopsStacksAWS1108v1-cicd-setup-tfstate-lock"
+  name           = "mlopsstacksaws1108v1-cicd-setup-tfstate-lock"
   read_capacity  = 1
   write_capacity = 1
   hash_key       = "LockID"
