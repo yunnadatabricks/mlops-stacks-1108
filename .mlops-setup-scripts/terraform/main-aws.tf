@@ -5,7 +5,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "mlopsStacksAWS1108v1-tfstate"
+  bucket = "mlopsStacksAWS1108v1tfstate"
 
   lifecycle {
     prevent_destroy = true
